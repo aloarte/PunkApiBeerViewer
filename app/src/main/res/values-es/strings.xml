@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="title_search_beer">Escribe el nombre de tu cerveza favorita.</string>
+    <string name="label_et_beer_name">Nombre de la cerveza</string>
+    <string name="btn_back">Atras</string>
+    <string name="btn_random_beer">Obten una cerveza aleatoria</string>
+    <string name="btn_continue_search">¡Comienza a buscar cervezas!</string>
+
+</resources>

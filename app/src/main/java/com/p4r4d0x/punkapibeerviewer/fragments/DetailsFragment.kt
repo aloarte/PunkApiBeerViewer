@@ -36,7 +36,7 @@ class DetailsFragment : Fragment() {
         tv_ph.text = "PH: ${beer.ph}"
         tv_brewer_tips.text = "Brewer tip: ${beer.brewersTips}"
         //Get the image from the URL
-        Picasso.get().load(beer.imageUrl).placeholder(R.mipmap.ic_launcher)
+        Picasso.get().load(beer.imageUrl).placeholder(R.mipmap.beermug)
             .into(iv_beer_image)
 
         //Set the onclick event for the button

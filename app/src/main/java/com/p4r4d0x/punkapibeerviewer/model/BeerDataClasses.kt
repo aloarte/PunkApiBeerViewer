@@ -69,7 +69,7 @@ data class BeerDTO(
     @SerializedName("method")
     val method: Method,
     @SerializedName("target_og")
-    val targetOg: Int = 0,
+    val targetOg: Double = 0.0,
     @SerializedName("image_url")
     val imageUrl: String = "",
     @SerializedName("boil_volume")
@@ -79,7 +79,7 @@ data class BeerDTO(
     @SerializedName("description")
     val description: String = "",
     @SerializedName("target_fg")
-    val targetFg: Int = 0,
+    val targetFg: Double = 0.0,
     @SerializedName("srm")
     val srm: Double = 0.0,
     @SerializedName("volume")
@@ -101,7 +101,7 @@ data class BeerDTO(
     @SerializedName("id")
     val id: Int = 0,
     @SerializedName("ibu")
-    val ibu: Int = 0,
+    val ibu: Double = 0.0,
     @SerializedName("brewers_tips")
     val brewersTips: String = ""
 )

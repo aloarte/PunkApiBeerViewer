@@ -6,7 +6,6 @@ import com.p4r4d0x.punkapibeerviewer.fragments.DetailsFragment
 import com.p4r4d0x.punkapibeerviewer.fragments.HomeFragment
 import com.p4r4d0x.punkapibeerviewer.fragments.SearchFragment
 import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+
 
         launchHomeFragment()
     }

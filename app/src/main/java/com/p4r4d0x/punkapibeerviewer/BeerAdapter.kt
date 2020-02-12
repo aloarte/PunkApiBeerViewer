@@ -31,7 +31,7 @@ class BeerAdapter(context: Context, private val dataSource: ArrayList<BeerDTO>) 
         val beerData = getItem(position)
         tvBeerName.text = beerData.name
         tvBeerTagline.text = beerData.tagline
-        Picasso.get().load(beerData.imageUrl).placeholder(R.mipmap.ic_launcher)
+        Picasso.get().load(beerData.imageUrl).placeholder(R.mipmap.beermug)
             .into(thumbnailImageView)
 
         return rowView
