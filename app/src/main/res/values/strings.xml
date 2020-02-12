@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Punkapi Beer Viewer</string>
-    <string name="action_settings">Settings</string>
+    <string name="lorem_ipsum" translatable="false">Lorem ipsum</string>
+
+
+    <string name="title_search_beer">Write the name of your favourite beer.</string>
+    <string name="label_et_beer_name">Beer name</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_random_beer">Get random beer</string>
+    <string name="btn_continue_search">Start looking for your beers!</string>
+
 </resources>

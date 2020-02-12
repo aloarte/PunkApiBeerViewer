@@ -8,53 +8,8 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/lv_beers"
-        android:layout_width="0dp"
-        android:layout_height="400sp"
-        android:layout_margin="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_beer_name"
-        app:layout_constraintVertical_bias="0.07999998" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_beer_name"
-        android:layout_width="200sp"
-        android:layout_height="50sp"
-        android:hint="Beer name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_beer_name"
-            style="@style/edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/btn_random_beer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Random Beer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lv_beers"
-        app:layout_constraintVertical_bias="0.45" />
+        android:id="@+id/nav_fragment"
+        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

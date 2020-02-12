@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.DetailsFragment">
+
+    <ImageView
+        android:id="@+id/iv_beer_image"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.120000005" />
+
+    <Button
+        android:id="@+id/btn_back_to_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_beer_image"
+        app:layout_constraintVertical_bias="0.89" />
+
+    <TextView
+        android:id="@+id/tv_beer_name"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/lorem_ipsum"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_beer_image"
+        app:layout_constraintVertical_bias="0.060000002" />
+
+    <TextView
+        android:id="@+id/tv_beer_tagline"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/lorem_ipsum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_beer_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_beer_name"
+        app:layout_constraintVertical_bias="0.00999999" />
+
+    <TextView
+        android:id="@+id/tv_beer_description"
+        android:layout_width="300sp"
+        android:layout_height="100sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/lorem_ipsum"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_beer_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_beer_tagline"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_ibu"
+        android:layout_width="80sp"
+        android:layout_height="20sp"
+        android:layout_marginTop="32dp"
+        android:text="@string/lorem_ipsum"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_beer_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_beer_description" />
+
+    <TextView
+        android:id="@+id/tv_abv"
+        android:layout_width="80sp"
+        android:layout_height="20sp"
+        android:layout_marginTop="8dp"
+        android:text="@string/lorem_ipsum"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_beer_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ibu" />
+
+    <TextView
+        android:id="@+id/tv_ph"
+        android:layout_width="80sp"
+        android:layout_height="20sp"
+        android:layout_marginTop="8dp"
+        android:text="@string/lorem_ipsum"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_beer_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_abv" />
+
+    <TextView
+        android:id="@+id/tv_brewer_tips"
+        android:layout_width="200sp"
+        android:layout_height="120sp"
+        android:layout_marginTop="32dp"
+        android:text="@string/lorem_ipsum"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_beer_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_beer_description" />
+</androidx.constraintlayout.widget.ConstraintLayout>

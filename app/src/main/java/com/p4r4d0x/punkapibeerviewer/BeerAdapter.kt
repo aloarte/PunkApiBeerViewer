@@ -22,12 +22,13 @@ class BeerAdapter(context: Context, private val dataSource: ArrayList<BeerDTO>) 
         // Get view for row item
         val rowView = inflater.inflate(R.layout.list_item_beer, parent, false)
 
-
+        //Initialize the views of the adapter
         val tvBeerName = rowView.findViewById(R.id.tv_beer_name) as TextView
         val tvBeerTagline = rowView.findViewById(R.id.tv_beer_tagline) as TextView
         val thumbnailImageView = rowView.findViewById(R.id.iv_beer_image) as ImageView
 
-        val beerData = getItem(position) as BeerDTO
+        //Get the value of the item on the list and place its value on the views
+        val beerData = getItem(position)
         tvBeerName.text = beerData.name
         tvBeerTagline.text = beerData.tagline
         Picasso.get().load(beerData.imageUrl).placeholder(R.mipmap.ic_launcher)
@@ -36,7 +37,7 @@ class BeerAdapter(context: Context, private val dataSource: ArrayList<BeerDTO>) 
         return rowView
     }
 
-    override fun getItem(position: Int): Any {
+    override fun getItem(position: Int): BeerDTO {
         return dataSource[position]
     }
 
