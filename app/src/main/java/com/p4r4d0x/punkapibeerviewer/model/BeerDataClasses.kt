@@ -65,7 +65,7 @@ data class BeerDTO(
     @SerializedName("first_brewed")
     val firstBrewed: String = "",
     @SerializedName("attenuation_level")
-    val attenuationLevel: Int = 0,
+    val attenuationLevel: Double = 0.0,
     @SerializedName("method")
     val method: Method,
     @SerializedName("target_og")
@@ -81,7 +81,7 @@ data class BeerDTO(
     @SerializedName("target_fg")
     val targetFg: Int = 0,
     @SerializedName("srm")
-    val srm: Int = 0,
+    val srm: Double = 0.0,
     @SerializedName("volume")
     val volume: Volume,
     @SerializedName("contributed_by")
