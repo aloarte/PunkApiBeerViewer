@@ -1,6 +1,8 @@
 package com.p4r4d0x.punkapibeerviewer.model
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 
@@ -61,6 +63,7 @@ data class BeerDtoWrapper(
     val listBeer: List<BeerDTO>
 )
 
+@Entity(tableName = "beer_table")
 data class BeerDTO(
     @SerializedName("first_brewed")
     val firstBrewed: String = "",
@@ -71,7 +74,7 @@ data class BeerDTO(
     @SerializedName("target_og")
     val targetOg: Double = 0.0,
     @SerializedName("image_url")
-    val imageUrl: String = "",
+    val imageUrl: String? = "",
     @SerializedName("boil_volume")
     val boilVolume: BoilVolume,
     @SerializedName("ebc")
@@ -98,6 +101,7 @@ data class BeerDTO(
     val tagline: String = "",
     @SerializedName("ingredients")
     val ingredients: Ingredients,
+    @PrimaryKey
     @SerializedName("id")
     val id: Int = 0,
     @SerializedName("ibu")

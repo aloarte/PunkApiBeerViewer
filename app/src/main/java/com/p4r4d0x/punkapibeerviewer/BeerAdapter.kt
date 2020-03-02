@@ -34,6 +34,8 @@ class BeerAdapter(context: Context, private val dataSource: ArrayList<BeerDTO>) 
         Picasso.get().load(beerData.imageUrl).placeholder(R.mipmap.beermug)
             .into(thumbnailImageView)
 
+
+
         return rowView
     }
 

@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     fun launchDetailFragment(beerData: BeerDTO) {
         val detailsFragment = DetailsFragment()
-        detailsFragment.beer = beerData
+        //detailsFragment.beer = beerData
         supportFragmentManager.beginTransaction().replace(R.id.nav_fragment, detailsFragment)
             .commit()
 

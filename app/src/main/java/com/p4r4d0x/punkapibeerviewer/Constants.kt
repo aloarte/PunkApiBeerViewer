@@ -11,4 +11,7 @@ object Constants {
      * Max timeout retries of the services
      */
     const val MAX_SERVICE_TIMEOUT_RETRIES = 5
+
+    const val DATABASE_NAME = "beer-db"
+
 }
