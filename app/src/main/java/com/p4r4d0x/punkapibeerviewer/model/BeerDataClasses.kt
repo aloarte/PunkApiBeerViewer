@@ -59,10 +59,6 @@ data class Ingredients(
     val malt: List<MaltItem>?
 )
 
-data class BeerDtoWrapper(
-    val listBeer: List<BeerDTO>
-)
-
 @Entity(tableName = "beer_table")
 data class BeerDTO(
     @SerializedName("first_brewed")

@@ -1,4 +1,4 @@
-package com.p4r4d0x.punkapibeerviewer.fragments
+package com.p4r4d0x.punkapibeerviewer
 
 
 import android.annotation.SuppressLint
@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.p4r4d0x.punkapibeerviewer.MainActivity
-import com.p4r4d0x.punkapibeerviewer.R
 import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_details.*

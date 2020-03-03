@@ -1,9 +1,9 @@
-package com.p4r4d0x.punkapibeerviewer
+package com.p4r4d0x.punkapibeerviewer.viewmodel
 
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.p4r4d0x.punkapibeerviewer.model.BeerViewModel
+import com.p4r4d0x.punkapibeerviewer.model.BeerRepository
 
 /**
  * Factory for creating a [BeerViewModelFactory] with a constructor that takes a [BeerRepository].

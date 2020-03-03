@@ -1,4 +1,4 @@
-package com.p4r4d0x.punkapibeerviewer
+package com.p4r4d0x.punkapibeerviewer.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.p4r4d0x.punkapibeerviewer.R
 import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
 import com.squareup.picasso.Picasso
 

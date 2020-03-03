@@ -1,4 +1,4 @@
-package com.p4r4d0x.punkapibeerviewer
+package com.p4r4d0x.punkapibeerviewer.utilities
 
 object Constants {
 
@@ -12,6 +12,8 @@ object Constants {
      */
     const val MAX_SERVICE_TIMEOUT_RETRIES = 5
 
-    const val DATABASE_NAME = "beer-db"
+    const val BEER_DATABASE_NAME = "beer_database"
+
+    const val PUNK_API_BASE_URL = "https://api.punkapi.com/"
 
 }

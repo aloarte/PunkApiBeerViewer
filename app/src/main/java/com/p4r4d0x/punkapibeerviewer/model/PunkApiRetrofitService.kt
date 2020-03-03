@@ -1,6 +1,5 @@
-package com.p4r4d0x.punkapibeerviewer
+package com.p4r4d0x.punkapibeerviewer.model
 
-import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -37,72 +37,45 @@ android {
 }
 
 dependencies {
-
-    implementation 'com.google.code.gson:gson:2.8.6'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.3.0'
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.fragment:fragment-ktx:1.2.2'
-
-
-
-
-    /*
-   api 'com.google.dagger:dagger:2.1'
-   annotationProcessor 'com.google.dagger:dagger-compiler:2.1'
-   implementation 'androidx.room:room-runtime:2.2.4'
-   kapt "android.arch.persistence.room:compiler:1.1.1"
-   kapt "android.arch.lifecycle:compiler:1.1.1"
-   annotationProcessor 'androidx.room:room-compiler:2.2.4'
-
-   testImplementation 'junit:junit:4.13'
-   androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-   androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-   implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-   implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
-   implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-   implementation 'androidx.work:work-runtime:2.3.2'
-
-    */
-
-// Room components
+    //Retrofit
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    //Basics Kotlin/Androidx
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.core:core-ktx:1.2.0"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "androidx.fragment:fragment-ktx:$ktxVersion"
+    // Room components
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
-    androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
-
-// Lifecycle components
+    // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
     kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-
-    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchVersion"
-
-// ViewModel Kotlin support
+    implementation 'com.google.guava:guava:27.0.1-android'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.archLifecycleVersion"
-
-// Coroutines
+    // Coroutines
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
-
-// UI
+    // UI
     implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Testing dependencies
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.testExtJunit"
-    androidTestImplementation "androidx.test.uiautomator:uiautomator:$rootProject.uiAutomatorVersion"
-    androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
-    androidTestImplementation "com.google.truth:truth:$rootProject.truthVersion"
-    implementation 'com.google.guava:guava:27.0.1-android'
+    androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchVersion"
+
+    testImplementation "junit:junit:$rootProject.junitVersion"
+
+
 
 }

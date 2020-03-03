@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/beer_background"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".HomeFragment">
 
     <Button
         android:id="@+id/btn_nav_search_fragment"

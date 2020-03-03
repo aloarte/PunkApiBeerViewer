@@ -13,7 +13,7 @@ import org.junit.Test
 class DTOBeerUnitTest {
 
 
-    lateinit var gson: Gson
+    private lateinit var gson: Gson
     @Before
     fun setup() {
         gson = Gson()

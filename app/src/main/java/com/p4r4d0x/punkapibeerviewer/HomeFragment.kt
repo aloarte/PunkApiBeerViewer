@@ -1,12 +1,10 @@
-package com.p4r4d0x.punkapibeerviewer.fragments
+package com.p4r4d0x.punkapibeerviewer
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.p4r4d0x.punkapibeerviewer.MainActivity
-import com.p4r4d0x.punkapibeerviewer.R
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -15,7 +13,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_nav_search_fragment.setOnClickListener { (activity as MainActivity).launchSearchFragment() }
-
     }
 
     override fun onCreateView(
