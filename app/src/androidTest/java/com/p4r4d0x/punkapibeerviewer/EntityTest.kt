@@ -99,14 +99,14 @@ class EntityTest {
     @Throws(Exception::class)
     fun writeUserAndReadInList() = runBlocking {
 
-        beerDao.save(beerList)
+        beerDao.saveBeers(beerList)
 
         val wholeDb = beerDao.getBeers()
         assertNotNull(wholeDb)
-        var byName = beerDao.load("punk%")
+        var byName = beerDao.getBeersByName("punk%")
         assertEquals(wholeDb.size, byName.size)
 
-        byName = beerDao.load("punkipa%")
+        byName = beerDao.getBeersByName("punkipa%")
         assertEquals(wholeDb.size, byName.size + 1)
 
     }

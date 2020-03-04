@@ -44,10 +44,10 @@ ext {
     espressoVersion = '3.1.1'
     gsonVersion = '2.8.6'
     junitVersion = '4.12'
-    ktxVersion = '1.2.2'
-    lifecycleVersion = '2.2.0-alpha01'
+    ktxVersion = '1.2.0'
     roomVersion = '2.2.4'
     testExtJunit = '1.1.0'
     okhttpVersion='4.3.0'
     retrofitVersion = '2.7.1'
+    daggerVersion = '2.5'
 }

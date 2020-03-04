@@ -38,6 +38,7 @@ class DetailsFragment : Fragment() {
             .into(iv_beer_image)
 
         //Set the onclick event for the button
-        btn_back_to_search.setOnClickListener { (activity as MainActivity).launchSearchFragment() }
+        btn_back_to_search.setOnClickListener { requireActivity().onBackPressed() }
+
     }
 }

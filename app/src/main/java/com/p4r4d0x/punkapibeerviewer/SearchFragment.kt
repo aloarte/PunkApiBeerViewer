@@ -8,21 +8,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.p4r4d0x.punkapibeerviewer.adapters.BeerAdapter
 import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
-import com.p4r4d0x.punkapibeerviewer.utilities.InjectorUtils
 import com.p4r4d0x.punkapibeerviewer.viewmodel.BeerViewModel
 import kotlinx.android.synthetic.main.fragment_search.*
+import javax.inject.Inject
 
 
 @Suppress("UNCHECKED_CAST")
 class SearchFragment : Fragment(), TextWatcher {
-
-    private val viewModel: BeerViewModel by viewModels {
-        InjectorUtils.provideBeerListViewModelFactory(requireContext())
-    }
+    @Inject
+    lateinit var beerViewModel: BeerViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,14 +32,22 @@ class SearchFragment : Fragment(), TextWatcher {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //When the ViewModel is changed, set the value to the arrayList
-        viewModel.getBeerListLiveData().observe(viewLifecycleOwner) {
+        beerViewModel.getBeerListLiveData().observe(viewLifecycleOwner) {
             val adapter = context?.let {
                 BeerAdapter(
-                    it, viewModel.getBeerListLiveData().value as ArrayList<BeerDTO>
+                    it,
+                    beerViewModel.getBeerListLiveData().value as ArrayList<BeerDTO>
                 )
             }
             lv_beers.adapter = adapter
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (requireActivity().applicationContext as PunkapiBeerViewerApplication).appComponent.inject(
+            this
+        )
     }
 
     override fun onResume() {
@@ -57,22 +62,9 @@ class SearchFragment : Fragment(), TextWatcher {
         }
     }
 
-    /**
-     * Clear the listView
-     */
-    private fun clearListView() {
-        val adapter = context?.let {
-            BeerAdapter(
-                it,
-                ArrayList()
-            )
-        }
-        lv_beers.adapter = adapter
-    }
-
     override fun afterTextChanged(s: Editable?) {
-        if (s.toString() == "") clearListView()
-        else viewModel.getBeers(s.toString())
+        if (s.toString() == "") /*clearListView()*/ beerViewModel.eraseAllBeers()
+        else beerViewModel.getBeers(s.toString())
     }
 
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

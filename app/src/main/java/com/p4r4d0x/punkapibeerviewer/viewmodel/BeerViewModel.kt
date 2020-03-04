@@ -8,8 +8,9 @@ import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
 import com.p4r4d0x.punkapibeerviewer.model.BeerRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class BeerViewModel(private val beerRepository: BeerRepository) : ViewModel() {
+class BeerViewModel @Inject constructor(private val beerRepository: BeerRepository) : ViewModel() {
 
     private val beerListData: MutableLiveData<List<BeerDTO>> = MutableLiveData()
 
@@ -20,6 +21,12 @@ class BeerViewModel(private val beerRepository: BeerRepository) : ViewModel() {
 
     fun getBeerListLiveData(): LiveData<List<BeerDTO>> {
         return beerListData
+    }
+
+    fun eraseAllBeers() = viewModelScope.launch(Dispatchers.IO) {
+        beerRepository.deleteBeers()
+        beerListData.postValue(ArrayList())
+
     }
 
 }

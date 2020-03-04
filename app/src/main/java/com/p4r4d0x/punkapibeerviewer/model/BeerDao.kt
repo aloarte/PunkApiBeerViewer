@@ -12,9 +12,12 @@ interface BeerDao {
     fun getBeers(): List<BeerDTO>
 
     @Query("SELECT * FROM beer_table WHERE name LIKE :beerName")
-    fun load(beerName: String): List<BeerDTO>
+    fun getBeersByName(beerName: String): List<BeerDTO>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun save(beer: List<BeerDTO>)
+    suspend fun saveBeers(beer: List<BeerDTO>)
+
+    @Query("DELETE FROM beer_table")
+    suspend fun removeAllBeers()
 
 }

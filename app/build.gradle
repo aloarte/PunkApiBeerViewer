@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -33,7 +32,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-
 }
 
 dependencies {
@@ -42,10 +40,13 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    //Dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
     //Basics Kotlin/Androidx
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
-    implementation "androidx.core:core-ktx:1.2.0"
+    implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
     implementation "androidx.fragment:fragment-ktx:$ktxVersion"
@@ -56,9 +57,8 @@ dependencies {
     // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
     kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-    implementation 'com.google.guava:guava:27.0.1-android'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.archLifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.archLifecycleVersion"
     // Coroutines
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
