@@ -9,7 +9,9 @@ import com.p4r4d0x.punkapibeerviewer.model.BeerRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class BeerListViewModel @Inject constructor(private val beerRepository: BeerRepository) :
     ViewModel() {
 

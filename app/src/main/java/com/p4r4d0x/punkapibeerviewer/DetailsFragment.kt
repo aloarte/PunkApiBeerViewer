@@ -1,6 +1,5 @@
 package com.p4r4d0x.punkapibeerviewer
 
-
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.google.gson.Gson
 import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
 import com.p4r4d0x.punkapibeerviewer.viewmodel.BeerDetailsViewModel
 import com.squareup.picasso.Picasso
@@ -31,10 +29,6 @@ class DetailsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        outState.putString("SavedBeerData", Gson().toJson(beer))
-        super.onSaveInstanceState(outState)
-    }
 
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -47,16 +41,12 @@ class DetailsFragment : Fragment() {
         //Set the data on the view model, checking of there is any data from the saved instance state
         if (savedInstanceState == null) {
             beerDetailsViewModel.setBeer(beer)
-        } else {
-            beer = Gson().fromJson(
-                savedInstanceState.getString("SavedBeerData"),
-                BeerDTO::class.java
-            )
-            beerDetailsViewModel.setBeer(beer)
         }
 
         //Observe the viewmodel
         beerDetailsViewModel.getBeerData().observe(viewLifecycleOwner, Observer {
+
+
             tv_beer_name.text = it.name
             tv_beer_tagline.text = it.tagline
             tv_beer_description.text = it.description

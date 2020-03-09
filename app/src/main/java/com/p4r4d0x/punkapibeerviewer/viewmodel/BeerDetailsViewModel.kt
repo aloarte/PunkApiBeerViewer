@@ -5,7 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class BeerDetailsViewModel @Inject constructor() : ViewModel() {
 
     private val beerData: MutableLiveData<BeerDTO> = MutableLiveData()
