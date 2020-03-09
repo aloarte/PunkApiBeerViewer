@@ -6,10 +6,15 @@ import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
 
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
-        launchHomeFragment()
+
+        if (savedInstanceState == null) {
+            launchHomeFragment()
+        }
 
     }
 
@@ -29,9 +34,10 @@ class MainActivity : AppCompatActivity() {
 
     fun launchDetailFragment(beerData: BeerDTO) {
         val detailsFragment = DetailsFragment()
-        detailsFragment.beer = beerData
         supportFragmentManager.beginTransaction().replace(R.id.nav_fragment, detailsFragment)
             .addToBackStack(null).commit()
+        detailsFragment.beer = beerData
+
     }
 
     override fun onBackPressed() {

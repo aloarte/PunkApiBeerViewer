@@ -10,7 +10,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class BeerViewModel @Inject constructor(private val beerRepository: BeerRepository) : ViewModel() {
+class BeerListViewModel @Inject constructor(private val beerRepository: BeerRepository) :
+    ViewModel() {
 
     private val beerListData: MutableLiveData<List<BeerDTO>> = MutableLiveData()
 

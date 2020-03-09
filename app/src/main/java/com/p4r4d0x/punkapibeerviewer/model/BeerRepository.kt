@@ -8,10 +8,10 @@ import javax.inject.Singleton
 class BeerRepository @Inject constructor(
     private val beerDao: BeerDao,
     private val webservice: PunkApiRetrofitService
+
 ) {
 
     suspend fun deleteBeers() = beerDao.removeAllBeers()
-
 
     /**
      * Get a list of beers that its name starts by $beerName

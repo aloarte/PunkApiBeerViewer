@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
 import com.p4r4d0x.punkapibeerviewer.adapters.BeerAdapter
 import com.p4r4d0x.punkapibeerviewer.model.BeerDTO
-import com.p4r4d0x.punkapibeerviewer.viewmodel.BeerViewModel
+import com.p4r4d0x.punkapibeerviewer.viewmodel.BeerListViewModel
 import kotlinx.android.synthetic.main.fragment_search.*
 import javax.inject.Inject
 
@@ -19,7 +19,7 @@ import javax.inject.Inject
 @Suppress("UNCHECKED_CAST")
 class SearchFragment : Fragment(), TextWatcher {
     @Inject
-    lateinit var beerViewModel: BeerViewModel
+    lateinit var beerListViewModel: BeerListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,11 +32,11 @@ class SearchFragment : Fragment(), TextWatcher {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //When the ViewModel is changed, set the value to the arrayList
-        beerViewModel.getBeerListLiveData().observe(viewLifecycleOwner) {
+        beerListViewModel.getBeerListLiveData().observe(viewLifecycleOwner) {
             val adapter = context?.let {
                 BeerAdapter(
                     it,
-                    beerViewModel.getBeerListLiveData().value as ArrayList<BeerDTO>
+                    beerListViewModel.getBeerListLiveData().value as ArrayList<BeerDTO>
                 )
             }
             lv_beers.adapter = adapter
@@ -63,8 +63,8 @@ class SearchFragment : Fragment(), TextWatcher {
     }
 
     override fun afterTextChanged(s: Editable?) {
-        if (s.toString() == "") /*clearListView()*/ beerViewModel.eraseAllBeers()
-        else beerViewModel.getBeers(s.toString())
+        if (s.toString() == "") /*clearListView()*/ beerListViewModel.eraseAllBeers()
+        else beerListViewModel.getBeers(s.toString())
     }
 
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

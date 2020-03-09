@@ -1,2 +1,22 @@
-# PunkApiBeerViewer
-Android application in Kotlin that consumes PunkApi api to show its elements.
+# PunkApi Beer Viewer
+Android application written in Kotlin that consumes [PunkApi](https://punkapi.com/documentation/v2) api to search and visualize data of different beers.
+
+<img src="ic_punk_viewer.png" align="left" height="200"/> 
+
+
+
+
+
+
+
+
+
+
+
+The application uses a MVVM design pattern, based on Android Jetpack components. 
+
+- Databases with Room.
+- LiveData + ViewModel.
+- Dependency Injection with Dagger.
+- Retrofit.
+
