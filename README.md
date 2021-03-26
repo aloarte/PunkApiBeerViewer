@@ -14,6 +14,13 @@ Android application written in Kotlin that consumes [PunkApi](https://punkapi.co
 
 
 
+
+
+
+
+
+
+
 ## :scroll: Description
 
 The application uses a MVVM design pattern, based on Android Jetpack components. 
